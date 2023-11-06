@@ -1,0 +1,21 @@
+Num torneio de e-sports é necessário que todos os integrantes da mesma equipe tenham etiquetas que os identifiquem. Por exemplo, se o nome da equipe é “Os Lutadores”, o primeiro membro deve ter uma etiqueta “Os Lutadores – 1", o segundo membro “Os Lutadores – 2", e assim pela frente.
+
+Elabore um algoritmo que permita ao usuário inserir o nome da equipe, e imprime etiquetas para os 5 membros da equipe seguindo o exemplo mostrado acima.
+
+Algoritmo "semnome"
+// Data atual  : 06/09/2023
+Var
+// Seção de Declarações das variáveis 
+  contador, numero: inteiro
+  nome_equipe: caractere
+
+Inicio
+// Seção de Comandos, procedimento, funções, operadores, etc... ]
+     EscrevaL("     Torneio de e-sports     ")
+     EscrevaL("Insira o nome da sua quipe: ")
+     Leia(nome_equipe)
+     Para contador de 1 ate 5 faca
+          EscrevaL(nome_equipe," - ", contador, "°")
+     FimPara
+
+Fimalgoritmo

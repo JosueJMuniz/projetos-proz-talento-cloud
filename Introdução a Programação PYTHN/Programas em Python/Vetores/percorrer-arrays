@@ -1,0 +1,4 @@
+lista_materiais = ['caderno', 'lapizeira', 'apontador', 'mochila']
+for i in range(0,4,1):
+    print("O item = " + lista_materiais[i])
+    

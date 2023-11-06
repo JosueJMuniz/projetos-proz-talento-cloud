@@ -1,0 +1,26 @@
+Desenvolva um programa que recebe do usuário nome completo e ano de nascimento que seja entre 1922 e 2021.
+A partir dessas informações, o sistema mostrará o nome do usuário e a idade que completou, ou completará, no ano atual (2022).
+
+Caso o usuário não digite um número ou apareça um inválido no campo do ano, o sistema informará o erro e continuará perguntando até que um valor correto seja preenchido.
+
+Trabalhe esse código em seu IDE, suba ele para sua conta no GitHub e compartilhe o link desse projeto no campo ao lado para que outros desenvolvedores possam analisá-lo.
+
+while (inicio == True):
+    try:
+        print("Deseja Começar S/N? \n")
+        entrada = str(input())
+        if (entrada != "S"):
+            inicio = False
+            continue
+        print("Insira seu nome completo sem acentos: ")
+        nome_completo = str(input())
+        print("Informe o ano de nascimento: ")
+        ano_nasc = int(input())
+        if (ano_nasc < 1922) or (ano_nasc > 2021):
+            print("Informe um ano de nascimento válido!")
+        else:
+            idade_atual = 2023 - ano_nasc
+            print("\nSeu nome é: " + nome_completo)
+            print("Sua idade atual é: " + str(idade_atual))
+    except:
+        print("Ocorreu um erro!\nTente Novamente!")

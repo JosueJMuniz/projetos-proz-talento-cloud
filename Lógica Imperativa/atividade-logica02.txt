@@ -1,0 +1,29 @@
+Em uma sala de aula, há vinte e cinco alunos. Entre eles, existem os grupos dos que gostam de Português (P) e os que gostam de Matemática (M). Eles estão organizados na sala de forma alternada, conforme apresentado a seguir:
+
+Chegaram mais onze alunos nessa turma e o professor organizou a turma da seguinte maneira:
+
+No entanto, o professor se ausentou da sala por cinco minutos e, ao voltar, percebeu que um aluno que gosta de uma das disciplinas havia trocado de lugar com alguém que prefere a outra.
+
+Sabendo que o professor tem dificuldade de memorizar, informe como ele descobriu a cadeira em que houve a troca de alunos e qual a disciplina de cada um.
+
+
+Se assumirmos que P = 1 e M = 2, podemos notar que a soma de P + M na horizontal em cada uma das 6 linhas na imagem 2 é:
+1° linha - P+M=8 
+2° linha - P+M=10
+3° linha - P+M=10
+4° linha - P+M=8 
+5° linha - P+M=10 
+6° linha - P+M=8 
+
+Já na imagem 3 ao reproduzir esse mesmo processo temos :
+1° linha - P+M=8 
+2° linha - P+M=10
+3° linha - P+M=10
+4° linha - P+M=9
+5° linha - P+M=9 
+6° linha - P+M=8
+ 
+Isso nos ajuda a notar onde houve uma quebra de padrão, nas linhas 4 e 5.
+
+Se cada vez que P aparecer tivessemos o incremento de P = P+2, e para cada vez que M aparecer tivessemos M = M+2.
+O professor para identificar, pode ter atribuido a cada cadeira em que está um aluno que goste da disciplina de Português um número impar e para as cadeiras com os alunos que gostam da disciplina de Matemática um valor par, sendo assim, ele sabe que o aluno na cadeira número 21 trocou de lugar com o aluno na cadeira número 32.

@@ -1,0 +1,16 @@
+Pedro foi ao supermercado e comprou ovos, leite, farinha, açúcar, manteiga e achocolatado em pó para fazer um bolo de chocolate. Como ele nunca fez um bolo antes, ele está bastante confuso e perdido. Auxilie Pedro construindo uma sequência lógica dos passos necessários para a preparação desse bolo. 
+
+1° passo - Tenha em mãos todos os ingredientes;
+2° passo - Pegue uma vasilha, uma colher e uma forma para bolo;
+3° passo - Nessa vasilha, misture a farinha, o açúcar e o achocolatado em pó;
+4° passo - Coloque a manteiga e misture;
+5° passo - Acrescente o leite e misture;
+6° passo - Em seguida bata os ovos no liquidificador por 5 minutos;
+7° passo - Coloque os ovos na vasilha e misture com os outros ingredientes;
+8° passo - Unte a forma com manteiga;
+9° passo - Acrescente um pouco da farinha na forma e espalhe uniformemente em toda área;
+10° passo - Reserve a mistura;
+11° passo - Pré-aqueça o forno em 180 C° por 10 minutos;
+12° passo - Despeje a mistura na forma;
+13° passo - Coloque-a no forno pré-aquecido;
+14° passo - Regule para forno médio e deixe assar por cerca de 45 minutos ou até dourar;

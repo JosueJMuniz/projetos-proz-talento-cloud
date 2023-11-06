@@ -1,0 +1,39 @@
+INSTRUÇÕES DO PROJETO
+Elabore um algoritmo para que o usuário, através da entrada de dados, informe os seus dados pessoais. Alguns desses dados
+fornecidos pelo usuário precisam ser apresentados na tela quando o algoritmo for executado, são eles:
+ 
+- Nome;
+- Endereço;
+- Cidade;
+- CPF;
+- RG.
+
+
+
+algoritmo
+
+var
+	nome : caracter
+	endereco : caracter
+	cidade : caracter
+	cpf : inteiro
+	rg : inteiro
+inicio
+	Escreva("Insira seu nome: ");
+	Leia(nome);
+	Escreval("Insira seu endereco: ");
+	Leia(endereco);
+	Escreval("Insira sua cidade: ");
+	Leia(cidade);
+	Escreval("Insira seu CPF (Apenas Numeros): ");
+	Leia(cpf);
+	Escreval("Insira seu RG (Apenas Numeros): ");
+	Leia(rg);
+	
+	Escreval("Olá! Como vai: ", nome);
+	Escreval("Seu Endereco é: ", endereco);
+	Escreval("Voce reside em: ", cidade);
+	Escreval("E possui o CPF de numero: ", cpf);
+	Escreval("Bem como o RG de numero: ", rg);	
+	
+fimalgoritmo
