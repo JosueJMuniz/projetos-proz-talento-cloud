@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="form.css"> -->
+
+    <title>European Tour</title>
+</head>
+
+<body>
+
+    <!-- Início menu superior -->
+    <nav class="navbar navbar-dark navbar-expand-md">
+        <div class="container">
+            <a href="#" class="navbar-brand d-flex align-items-center"><i
+                    class="bi bi-rocket-takeoff-fill fs-2 me-2"></i>European Tour</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuBar">
+            </button>
+            <div class="collapse navbar-collapse" id="menuBar">
+                <div class="navbar-nav ms-auto">
+                    <a href="#home" class="nav-link ms-auto">Home</a>
+                    <a href="#destinos" class="nav-link ms-auto">Destinos</a>
+                    <a href="#dicas" class="nav-link ms-auto">Dicas</a>
+                    <a href="#contato" class="nav-link ms-auto">Contato</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Fim menu superior -->
+    <!-- Início dos cards -->
+    <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 g-3">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/amsterda001.png" alt="" class="card-img-top">
+                    <h4 class="card-header">PROMOÇÃO!!!</h4>
+                    <div class="card-body">
+                        <h5 class="card-title">Amsterdã</h5>
+                        <h6 class="card-subtitle">Holanda</h6>
+                        <p class="card-text" align="justify">Conheça uma das cidades mais belas do mundo onde quase tudo
+                            é permitido!
+                        </p>
+                        <a href="#" class="card-link">Link 1</a>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/coliseu001.png" alt="" class="card-img-top">
+                    <h4 class="card-header">Melhores Ofertas!!!</h4>
+                    <div class="card-body">
+                        <h5 class="card-title">Roma</h5>
+                        <h6 class="card-subtitle">Itália</h6>
+                        <p class="card-text" align="justify">O Coliseu é um dos destinos preferidos de quem visita a
+                            Italia.
+                        </p>
+                        <a href="#" class="card-link">Link 1</a>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card h-100">
+                    <img src="img/torre001.png" alt="" class="card-img-top">
+                    <h4 class="card-header">O amor está no ar.</h4>
+                    <div class="card-body">
+                        <h5 class="card-title">Paris</h5>
+                        <h6 class="card-subtitle">França</h6>
+                        <p class="card-text" align="justify">Um dos destinos mais procurados pelos casais enamorados. O
+                            romance paira no ar. Paris também é conhecida como capital do amor.
+                        </p>
+                        <a href="#" class="card-link">Link 1</a>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim dos cards -->
+
+    <div class="container">
+
+        <div class="offcanvas-body" id="Contato">
+            <h1 id="contato">Contato</h1>
+        </div>
+
+        <form action="" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" class="form-control" id="telefone" name="telefone" required>
+
+            <label for="plano">Plano</label>
+            <select name="" id="plano" class="form-select" placeholder=" " required>
+                <option value="">Plano 1</option>
+                <option value="">Plano 2</option>
+                <option value="">Plano 3</option>
+            </select>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+
+</body>
+
+</html>

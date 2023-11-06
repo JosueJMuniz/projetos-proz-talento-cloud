@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/*Estilizando o Menu*/
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+  background-color: #0a0942;
+  padding: 0 2.4rem;
+}
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: large;
+}
+
+span, h2{
+  display: flex;
+  font-style: oblique;
+  font-size: large;
+  color: aliceblue;
+}
+
+body{
+  background-color: rgb(58, 172, 180);
+  background:  linear-gradient(90deg, rgba(58,172,180,0.9410745233968805) 0%, rgba(29,82,253,1) 44%, rgba(121,69,252,1) 100%);
+  font-size: 1.6rem;
+  font-family: 'Roboto';
+
+}
+ul{
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 0 4px 4px;
+    margin: 50px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  
+  #img-recife{
+    width: 760px;
+    height: 200px;
+  }
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    display: flex;
+    padding: 4px 32px;
+    font-size: large;
+    align-items: end;
+  }
+
+
+.rodape{
+
+  display: inline;
+}
+
+:root{
+  --nav-bg-color: #121212;
+}

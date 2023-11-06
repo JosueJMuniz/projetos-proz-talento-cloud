@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EuroTour</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+<body>
+    <header>
+        <!--  Embora sabemos que é possível usar a tag div para todas as seções, é uma boa prática usar as tags respectivas para cada seção:
+        - Header - Usaremos a tag <header>
+        - Logo - Geralmente o logo é uma imagem, porém, nesse exemplo usaremos a tag <span>
+        - Barra de navegação - Usaremos a tag <nav>
+        - Links de navegação - Neste caso, como temos uma lista de elementos sem ordem específica a serem exibidos, usaremos a tag <ul> para criar uma “lista não ordenada”, 
+        e uma tag <li> para cada item da lista (neste caso, três itens: Passagens, Hospedagem e Pontos turísticos)-->
+        <header>
+            <span>EuroTour</span>
+            <!--BARRA DE NAVEGAÇÃO-->
+            <nav>
+                <ul>
+                    <li>Passagens</li>
+                    <li>Hospedagens</li>
+                    <li>Pontos Turísticos</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+
+            <h1>Bem-vindo a EuroTour</h1>
+            <section>
+                <h3>Sobre nós</h3>
+            </section>
+            <p>EuroTour é um site que ajuda voçê a planejar viagens para o Brasil, desde a compra de passagens, até
+                a visita aos pontos turísticos mais
+                importantes de cada região!
+            </p>
+            <section>
+                <h3>Principais pontos turísticos da Europa</h3>
+            </section>
+            <div class="card">
+                <img id="img-coliseu" src="./assets/img/roma-coliseu.webp" alt="roma-coliseu" style="width: 100%">
+                <div class="conteiner">
+                    <h4>Coliseu em Roma, Itália</h4>
+                    <p>O Coliseu, cujo nome oficial é Anfiteatro Flaviano, começou a ser construído em 72 d.C e demorou
+                        oito anos para ficar pronto. A construção, de concreto e areia,
+                        foi comandada pelo imperador Flávio Vespasiano – homenageado pelo filho Tito, que governava Roma
+                        quando as obras acabaram.
+                        <br>
+                        <strong>Endereço: </strong>Piazza del Colosseo, Roma, Itália.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img id="img-torre-eiffel" src="./assets/img/./torre-eiffel-prefiro-viajar-768x512.jpg" alt="torre-eiffel" style="width: 100%">
+                <div class="conteiner">
+                    <h4>Torre Eiffel em Paris, França</h4>
+                    <p>A construção de cerca de 300 metros de altura e dez mil toneladas que se tornou símbolo da
+                        capital francesa é capaz de dar um ar romântico a qualquer viagem.
+
+                        A Torre Eiffel foi construída para a Exposição Universal de 1889, que celebrava os 100 anos da
+                        Revolução Francesa. Uma competição de design arquitetônico selecionou o projeto do engenheiro
+                        Gustave Eiffel, que projetou o monumento como arco de entrada da exposição, no Champ de Mars.
+                        <br>
+                        <strong>Endereço: </strong>Champ de Mars, 5 Avenue Anatole, Paris, França.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img id="img-torres" src="./assets/img/torres-da-sagrada-familia.webp" alt="torres-da-familia"
+                    style="width: 100%">
+                <div class="conteiner">
+                    <h4>Sagrada Família em Barcelona, Espanha</h4>
+                    <p>Em construção há 135 anos, a Sagrada Família deve ficar pronta somente em 2026, mas há muito
+                        tempo atrai visitantes de todo o mundo, que enfrentam filas intermináveis para conhecer a
+                        edificação.
+                        A basílica que se tornou um dos principais pontos de visitação para quem vai à Barcelona começou
+                        como um projeto neogótico de Francisco de Paula del Villar e Lozano.
+                        <br>
+                        <strong>Endereço: </strong>Carrer de Mallorca, 401, Barcelona, Espanha.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img id="img-minas-de-sal" src="./assets/img/./mina-de-sal-de-wieliczka.webp"
+                    alt="minas-de-sal-de-wieliczka" style="width: 100%">
+                <div class="conteiner">
+                    <h4>Mina de Sal de Wieliczka, Polônia</h4>
+                    <p>
+                        Patrimônio Mundial da Unesco e uma das empresas em operação mais antigas do mundo, a Mina de Sal
+                        de Wieliczka, cidade nos arredores de Cracóvia, é também uma das atrações mais procuradas da
+                        Polônia.
+                        <br>
+                        <strong>Endereço: </strong>Daniłowicza 10, 32-020 Wieliczka, Polônia.
+                    </p>
+                </div>
+            </div>
+
+
+        </main>
+        <footer>
+            <h4>EuroTour &copy;</h4>
+            <ul>
+                <li>Facebook</li>
+                <li>Whatsapp</li>
+                <li>Linkedin</li>
+            </ul>
+        </footer>
+
+</body>
+
+</html>
