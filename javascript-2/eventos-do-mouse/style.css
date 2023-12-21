@@ -1,0 +1,9 @@
+span{
+    opacity: 0;
+    transition: all 0.9s;
+}
+
+section{
+    margin-top: 1rem;
+    
+}

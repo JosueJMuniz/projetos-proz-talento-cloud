@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event example</title>
+</head>
+
+<body>
+    <div id="mainContent">
+        <button id="clickButton" class="buttonStyle">click me</button>
+    </div>
+
+    <script>
+        var clickButton = document.querySelector("#clickButton");
+
+        clickButton.addEventListener('click', displayDialog, false);
+
+        function displayDialog(e) {
+            window.alert('The event (' + e.type + ') was fired from ' + e.target.id + '.');
+        }
+    </script>
+</body>
+
+</html>

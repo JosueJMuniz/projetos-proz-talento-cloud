@@ -1,0 +1,21 @@
+div{
+    background-color: lightblue;
+    width: 250px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px 3px;
+
+}
+
+.borda-azul{
+    border: solid 5px darkblue;
+    border-radius: 4px;
+}
+
+.texto-novo{
+    color: #dc143c;
+    font-weight: 800;
+}

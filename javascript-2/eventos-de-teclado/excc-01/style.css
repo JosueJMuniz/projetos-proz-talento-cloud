@@ -1,0 +1,9 @@
+#quadrado {
+    width: 24px;
+    height: 24px;
+    background-color: blue;
+    /* A propriedade position com valor "relative" server para mover 
+       o elemento 
+    */
+    position: relative;
+}
