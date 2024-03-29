@@ -1,0 +1,102 @@
+MODELAGEM DE BANCOS DE DADOS
+
+01 -  HOTEL
+
+Precisamos de um sistema para gerênciar o aluguel de quartos do nosso hotel.
+Cada quarto tem um número, valor da diária, e vista para o mar ou para cidade. Para fazer 
+uma reserva, nossos clientes precisam enviar apenas o nome completo do responsável,
+RG e telefone de contato. Precisamos que cada aluguel gere um registro associando a 
+pessoa com o quarto que deseja alugar. Seria interessante incluir nesse registro as datas
+de entrada e saída, além de ter talvez algum tipo de controle dos pagamentos (valor total,
+ meio de pagamento) de cada estadia. 
+
+CREATE TABLE quarto (
+    numero INT NOT NULL PRIMARY KEY,
+    valor_diaria FLOAT NOT NULL,
+    vista_mar BOOLEAN
+);
+
+CREATE TABLE cliente(
+	id BIGINT PRIMARY KEY,
+	nome VARCHAR(48) NOT NULL,
+    	rg VARCHAR(8) NOT NULL,
+   	 telefone VARCHAR(12) NOT NULL
+);                                                                             
+
+------------- INSERINDO DADOS --TABELA QUARTO-------------------------------------             
+  
+	INSERT INTO quarto (numero, valor_diaria, vista_mar) VALUES 
+	(101, 74.79, FALSE), 
+	(102, 89.80, TRUE),
+	(201, 150, TRUE);       
+
+------------- INSERINDO DADOS --TABELA CLIENTE-------------------------------------     
+
+INSERT INTO `exemplo_tabela_auxiliar`.`cliente`
+(`id`,
+`nome`,
+`rg`,
+`telefone`)
+VALUES
+(<{id: }>,
+<{nome: }>,
+<{rg: }>,
+<{telefone: }>);
+
+
+-------- TABELA AUXILIAR --------------------------------------------
+
+CREATE TABLE estadia (
+	id BIGINT PRIMARY KEY,
+	fk_id_quarto INT NOT NULL,
+    fk_id_cliente int NOT NULL,
+    
+    CONSTRAINT  fk_quarto FOREIGN KEY (fk_id_quarto) REFERENCES quarto(numero),
+    CONSTRAINT fk_cliente FOREIGN KEY (fk_id_cliente) REFERENCES cliente(id)
+);
+                                                                                   
+
+------------------ INSERINDO DADOS --TABELA ESTADIA-------------------------------------                    
+
+INSERT INTO estadia(fk_id_quarto, fk_id_cliente) VALUES 
+(101, 1),
+(201, 2),
+(102, 1),
+(201, 2);
+
+------------------------ INCLUINDO OS REGISTROS DAS DATAS DE ENTRADA E SAÍDA -------------------------------------
+ALTER TABLE ESTADIA 
+	 ADD COLUMN DATA_ENTRADA VARCHAR(48),
+  	 ADD COLUMN DATA_SAIDA VARCHAR(48),
+   	 ADD COLUMN VALOR_TOTAL FLOAT;
+    
+    
+CREATE TABLE MEIO_PAGAMENTO(
+	ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    	NOME VARCHAR(18) NOT NULL
+
+);
+
+
+INSERT INTO MEIO_PAGAMENTO(NOME) VALUES 
+	('DINHEIRO'),
+	('CARTÃO DE DÉBITO'),
+	('CARTÃO DE CRÉDITO');
+
+ALTER TABLE ESTADIA 
+	ADD COLUMN fk_id_meio_pagamento BIGINT,
+    	ADD CONSTRAINT fk_meio_pagamento FOREIGN KEY (fk_id_meio_pagamento)
+    	REFERENCES meio_pagamento(ID);
+
+---------------------- ATUALIZANDO OS DADOS DA TABELA ----------------------------------------------------------------------
+UPDATE ESTADIA
+	SET DATA_SAIDA = '2024-03-22T12:45:00',
+		DATA_ENTRADA = '2024-03-20T08:45:00',
+		VALOR_TOTAL = 446.97,
+        FK_ID_MEIO_PAGAMENTO = 2
+    WHERE ID = 10;
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                

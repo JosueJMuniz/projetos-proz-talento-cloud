@@ -1,0 +1,125 @@
+ATIVIDADE 02 -- BIBLIOTECA
+
+CRIE UM SISTEMA PARA GERÊNCIAR O EMPRÉSTIMO DE LIVROS. CADA LIVRO POSSUI UM ID, TÍTULO E NOME
+DO AUTOR. AS ÚNICAS INFORMAÇÕES QUE PEDIMOS DAS PESSOAS PARA PEGAR OS LIVROS É O NOME COMPLETO
+, RG E TELEFONE PARA CONTATO. PRECISAMOS QUE CADA EMPRÉSTIMO GERE ALGUM TIPO DE REGISTRO ASSO-
+-CIANDO A PESSOA COM O LIVRO QUE PEGOU EMPRESTADO.
+SERIA INTERESSANTE INCLUIR NESSE REGISTRO A DATA EM QUE O LIVRO FOI EMPRESTADO, E A DATA EM QUE FOI
+DEVOLVIDO, ALÉM DE TER TALVEZ ALGUM TIPO DE CONTROLE DE MULTAS PARA AQUELES QUE RETORNAREM
+OS LIVROS FORA DO PRAZO DEFINIDO ( TEMPO DE ATRAZO E VALOR DA MULTA)
+
+
+----------------------- CRIANDO AS TABELAS ---------------------------
+
+CREATE TABLE acervo_livros(
+	id INT NOT NULL  PRIMARY KEY,
+   	 titulo VARCHAR(48) NOT NULL,
+   	 nome_autor VARCHAR(36) NOT NULL
+);
+
+CREATE TABLE pessoa(
+	id_pessoa int NOT NULL PRIMARY KEY,
+	nome_completo VARCHAR(40) NOT NULL,
+	rg VARCHAR(40) NOT NULL,
+    	telefone VARCHAR(26)
+);
+
+
+
+
+------------------ INSERINDO DADOS NAS TABELAS -------------------------
+
+INSERT INTO acervo_livros(titulo, nome_autor) VALUES
+('A Divina Comédia', 'Dante Alighieri'),
+('Os Condenados da Terra','Frantz Fanon'),
+('O Capital: Livro 1','Karl Marx'),
+('O Senhor dos Anéis', 'J. R. R. Tolkien');
+
+
+INSERT INTO pessoa(nome_completo, rg, telefone) VALUES 
+('Josué de Jesus', '4244756', '28 09993-888'),
+('Alan Walker', '0944313', '35 99865-345'),
+('Lorrayne Peçanha', '216675', '28 9908-332'),
+('Emilly de Córdova', '6557334', '27 78443-091');
+
+------------------- CRIANDO TABELA DE REGISTRO DOS EMPRÉSTIMOS   E   MULTA-------------------
+
+CREATE TABLE emprestimo(
+	id INT PRIMARY KEY,
+    	fk_id_livro BIGINT NOT NULL,
+    	fk_id_pessoa INT NOT NULL,
+    
+    	CONSTRAINT fk_livro FOREIGN KEY (fk_id_livro) REFERENCES acervo_livros(id),
+    	CONSTRAINT fk_pessoa FOREIGN KEY (fk_id_pessoa)	REFERENCES pessoa(id_pessoa)
+);
+
+
+CREATE TABLE multa_atraso(
+		id INT PRIMARY KEY NOT NULL,
+    	valor_multa FLOAT,
+    	tempo_atraso VARCHAR(28)
+);
+
+
+ ------------------------- INCLUINDO OS REGINTROS DE DATA_EMPRESTIMO E DEVOLUÇÃO-------------
+
+INSERT INTO multa_atraso (valor_multa, tempo_atraso) VALUES
+(15.98, '1 DIA'),
+(111.86, '7 DIAS'),
+(0, 'Valor do Livro');
+
+
+ALTER TABLE emprestimo
+	ADD COLUMN fk_id_multa INT NOT NULL,
+   	ADD CONSTRAINT fk_multa FOREIGN KEY (fk_id_multa) REFERENCES multa_atraso(id);
+
+
+--------------------------- ATUALIZANDO DADOS DA TABELA ------------------------------------------------------------
+
+
+INSERT INTO emprestimo (fk_id_livro, data_emprestimo, data_devolucao,fk_id_multa, fk_id_pessoa) VALUES 
+(2,'2024-03-12T13:07', '2024-03-17T15:17', 1, 1);
+
+
+INSERT INTO emprestimo (fk_id_livro, data_emprestimo, data_devolucao,fk_id_multa, fk_id_pessoa) VALUES 
+(2,'2024-03-12T13:07', '2024-03-17T15:17',),
+('2024-02-15T13:56', '2024-02-17T16:57'),
+('2024-01-01T09:34', '2024-01-15T18:10'),
+('2024-04-23T12:37', '2024-04-17T09:23');
+
+
+
+
+
+
+
+INSERT INTO emprestimo (id, fk_id_multa, fk_id_pessoa, fk_id_livro) VALUES 
+(1, 1, 1, 3),
+(2, 2, 2, 4),
+(3, 1, 3, 2),
+(4, 2, 4, 2);
+
+UPDATE emprestimo
+	SET data_emprestimo = '2024-01-12T09:00',
+		data_devolucao = '2024-02-12T12:45',
+        fk_id_multa = 2,
+        fk_id_livros =3,
+        fk_id_pessoa = 2
+	WHERE id =2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

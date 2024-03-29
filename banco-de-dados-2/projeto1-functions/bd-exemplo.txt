@@ -1,0 +1,133 @@
+Uma loja tem um banco de dados que contém todo o controle de vendas de produtos e de cadastro de clientes. 
+Pensando nisso, crie uma função para somar todos os clientes que foram cadastrados na loja durante um dia.
+
+
+
+---------------------- CRIANDO TAELAS CLIENTE E PRODUTOS-----------------------------
+
+CREATE TABLE produto (
+	id_produto INT NOT NULL PRIMARY KEY,
+    nome_produto VARCHAR(36),
+    descricao VARCHAR(100),
+    valor FLOAT NOT NULL
+);
+
+INSERT INTO produto (id_produto, nome_produto, descricao, valor)
+	VALUES (1, 'Mouse Logitech M90', 'Com fio', 45.76), 
+		(2, 'Teclado AOC GK450', 'Teclado mecânico', 158.99), 
+		(3, 'Monitor AOC Hero 24"', '144Hz IPS 1ms AMD FreeSync 24G2', 797.05);
+
+
+
+
+CREATE TABLE cliente(
+    id_cliente INT NOT NULL PRIMARY KEY,
+    nome_cliente VARCHAR(36),
+    telefone VARCHAR(48)
+);
+
+
+INSERT INTO cliente(nome_cliente, telefone)
+VALUES ('JOSÉ ALDO','33 9909-876'), ('INEZITA BARROSO','45 554-342'), ('ARASSI ZUQUI','78 887-665');
+
+-------------------------- CRIANDO TABELA AUXILIAR DE CONTROLE PARA AS VENDAS DE PRODUTOS ------------------
+
+CREATE TABLE vendas (
+	id_venda INT NOT NULL PRIMARY KEY,
+    fk_id_produto INT NOT NULL,
+    fk_id_cliente SERIAL NOT NULL,
+    
+    CONSTRAINT fk_produto FOREIGN KEY (fk_id_produto) REFERENCES produto(id_produto),
+    CONSTRAINT fk_cliente FOREIGN KEY (fk_id_cliente) REFERENCES cliente(id_cliente)
+);
+
+
+
+CREATE TABLE cadastro_cliente (
+  id_cadastro int NOT NULL,
+  fk_id_cliente bigint unsigned NOT NULL AUTO_INCREMENT,
+  data_cadastro date DEFAULT NULL,
+  PRIMARY KEY (id_cadastro),
+  CONSTRAINT fk_cadastros_cliente FOREIGN KEY (fk_id_cliente) REFERENCES client (id_cliente)
+)
+
+INSERT INTO cadastro_cliente (id_cadastro, fk_id_cliente, data_cadastro)
+	VALUES (001, 1, '2024-09-21');
+
+
+UPDATE cadastro_cliente
+	SET data_cadastro = '2024-09-22'
+    WHERE id_cadastro =3;
+
+
+-------------------------- CRIANDO TABELA AUXILIAR DE CONTROLE PARA O CADASTRO DE CLIENTES ------------------
+
+CREATE TABLE cadastro_cliente (
+  id_cadastro int NOT NULL,
+  fk_id_cliente bigint unsigned NOT NULL AUTO_INCREMENT,
+  data_cadastro date DEFAULT NULL,
+  PRIMARY KEY (id_cadastro),
+  CONSTRAINT fk_cadastros_cliente FOREIGN KEY (fk_id_cliente) REFERENCES client (id_cliente)
+)
+
+INSERT INTO cadastro_cliente (id_cadastro, fk_id_cliente, data_cadastro)
+	VALUES (001, 1, '2024-09-21');
+
+
+UPDATE cadastro_cliente
+	SET data_cadastro = '2024-09-22'
+    WHERE id_cadastro =3;
+
+
+
+
+
+
+
+
+
+
+-------------------------------- FUNCAO PARA MOSTRAR OS CLIENTES CADASTRADOS EM UMA DATA ------------------------------
+DELIMITER //
+CREATE FUNCTION soma_clientes(dataCadastro DATE)
+RETURNS INT
+deterministic
+BEGIN
+	DECLARE total INT;
+    
+	SELECT COUNT(*) INTO total
+	FROM cadastro_cliente
+	WHERE TRUNC(data_cadastro) = TRUNC(dataCadastro);
+	  
+	RETURN total;
+END //
+DELIMITER ;
+
+
+
+
+
+
+DELIMITER //
+CREATE FUNCTION soma_clientes(dataCadastro DATE)
+RETURNS INT
+deterministic
+BEGIN
+	DECLARE total INT;
+    
+	SELECT COUNT(*) INTO total
+	FROM cadastro_cliente
+	WHERE(data_cadastro) = (dataCadastro);
+	  
+	RETURN total;
+END //
+DELIMITER ;
+
+
+
+
+
+
+SELECT soma_clientes('2024-09-21') AS total_clientes_cadastrados;
+
+

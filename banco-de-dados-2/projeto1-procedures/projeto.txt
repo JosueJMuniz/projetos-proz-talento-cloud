@@ -1,0 +1,47 @@
+Uma empresa de vendas tem um banco de dados com informações sobre os seus produtos. 
+Ela precisa criar um relatório que faça um levantamento diário da quantidade de produtos comprados por dia. 
+Para ajudar a empresa, crie um procedure para agilizar esse processo.
+
+// Criando o banco de dados da empresa
+
+CREATE DATABASE alixVendas;
+
+// Criando tabela de produtos
+
+CREATE TABLE produtos(
+    id_produto INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(25) NOT NULL,
+    qtd_produto INT NOT NULL,
+    tipo VARCHAR(25),
+    valor FLOAT
+);
+
+// Criando a tabela para registrar as vendas
+
+CREATE TABLE Pedidos (
+    PedidoID INTEGER PRIMARY KEY,
+    ClienteID INTEGER,
+    Produto VARCHAR(50),
+    Quantidade INTEGER,
+    FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID)
+);
+
+
+
+-- Criação da procedure para o levantamento diário da quantidade de produtos comprados
+
+DELIMITER //
+	CREATE PROCEDURE RelatorioProdutosCompradosPorDia()
+	BEGIN
+		SELECT DATE(DataCompra) AS Dia, SUM(Quantidade) AS TotalProdutosComprados
+		FROM Pedidos
+		WHERE DATE(DataCompra) = DATE(NOW()) -- Filtra apenas os pedidos do dia atual
+		GROUP BY DATE(DataCompra);
+	END //
+	DELIMITER 
+
+
+-- INSERINDO DADOS NA TABELA PRODUTOS
+INSERT INTO produtos (nome, qtd_produto, tipo, valor)  VALUES ('Alvejante Ontux 1L', 23, 'Produto de Limpeza', 12.90), 
+	 ('Sabonete Monanje 100g', 12 ,'Higiêne Pessoal', 4.50),  
+	('Desodorante OldSpice 90g', 19,'Perfumaria', 14.90)
